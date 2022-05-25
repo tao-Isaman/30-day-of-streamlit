@@ -1,20 +1,18 @@
+import os
+
 import numpy as np
 import altair as alt
 import pandas as pd
 import streamlit as st
 
-from day_pages import day8, day9, day10, default_page
+from short_page import make_day_page
+
+arr = os.listdir('./day_pages')
 
 st.title('isaman.streamlit')
 st.header('30 day of Streamlit')
 
-
-pages = {
-    "Default" :  default_page.page,
-    "Day 8" : day8.page,
-    "Day 9" : day9.page,
-    "Day 10" : day10.page,
-}
+pages = make_day_page()
 page = st.selectbox('Select Page',tuple(pages.keys()))
 
 pages[page]()
