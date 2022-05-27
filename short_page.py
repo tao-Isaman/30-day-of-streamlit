@@ -4,8 +4,6 @@ from day_pages import *
 
 arr = os.listdir('./day_pages')
 
-print(arr)
-print(globals())
 def short_key(value: str) -> int:
     return value.isdigit() and int(value) or 0 
 
